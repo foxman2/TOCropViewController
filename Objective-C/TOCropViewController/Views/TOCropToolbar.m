@@ -183,12 +183,12 @@
 #pragma mark - Image Generation -
 + (UIImage *)doneImage:(NSBundle *)bundle
 {
-    return [UIImage imageNamed:@"done"];
+    return [UIImage imageNamed:@"done" inBundle:bundle compatibleWithTraitCollection:nil];
 }
 
 + (UIImage *)cancelImage:(NSBundle *)bundle
 {
-    return [UIImage imageNamed:@"close"];
+    return [UIImage imageNamed:@"close" inBundle:bundle compatibleWithTraitCollection:nil];
 }
 
 #pragma mark - Accessors -
