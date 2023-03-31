@@ -35,28 +35,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 /* The 'Done' buttons to commit the crop. The text button is displayed
  in portrait mode and the icon one, in landscape. */
-@property (nonatomic, strong, readonly) UIButton *doneTextButton;
 @property (nonatomic, strong, readonly) UIButton *doneIconButton;
-@property (nonatomic, copy) NSString *doneTextButtonTitle;
 @property (null_resettable, nonatomic, copy) UIColor *doneButtonColor;
 
 /* The 'Cancel' buttons to cancel the crop. The text button is displayed
  in portrait mode and the icon one, in landscape. */
-@property (nonatomic, strong, readonly) UIButton *cancelTextButton;
 @property (nonatomic, strong, readonly) UIButton *cancelIconButton;
-@property (nonatomic, readonly) UIView *visibleCancelButton;
-@property (nonatomic, copy) NSString *cancelTextButtonTitle;
 @property (nullable, nonatomic, copy) UIColor *cancelButtonColor;
 
-@property (nonatomic, assign) BOOL showOnlyIcons;
-
-/* The cropper control buttons */
-@property (nonatomic, strong, readonly)  UIButton *rotateCounterclockwiseButton;
-@property (nonatomic, strong, readonly)  UIButton *resetButton;
-@property (nonatomic, strong, readonly)  UIButton *clampButton;
-@property (nullable, nonatomic, strong, readonly) UIButton *rotateClockwiseButton;
-
-@property (nonatomic, readonly) UIButton *rotateButton; // Points to `rotateCounterClockwiseButton`
 
 /* Button feedback handler blocks */
 @property (nullable, nonatomic, copy) void (^cancelButtonTapped)(void);
@@ -66,9 +52,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, copy) void (^clampButtonTapped)(void);
 @property (nullable, nonatomic, copy) void (^resetButtonTapped)(void);
 
-/* State management for the 'clamp' button */
-@property (nonatomic, assign) BOOL clampButtonGlowing;
-@property (nonatomic, readonly) CGRect clampButtonFrame;
 
 /* Aspect ratio button visibility settings */
 @property (nonatomic, assign) BOOL clampButtonHidden;
@@ -83,6 +66,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 /* Done button frame for popover controllers */
 @property (nonatomic, readonly) CGRect doneButtonFrame;
+
+//不用的
+@property (nonatomic) bool clampButtonGlowing;
+@property (nonatomic) CGRect clampButtonFrame;
+
 
 @end
 
